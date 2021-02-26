@@ -1,0 +1,187 @@
+/*---------------------
+ Text / Common Elements
+-----------------------*/
+
+body {
+	height: 100%;
+	font-family: 'Josefin Sans', sans-serif;
+	background-color: #f2f7f8;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: #40424a;
+	margin: 0;
+	font-weight: 600;
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+h2 {
+	font-size: 48px;
+}
+
+h3 {
+	font-size: 30px;
+}
+
+p {
+	font-size: 18px;
+	color: #808181;
+	line-height: 1.8;
+}
+
+img {
+	max-width: 100%;
+}
+
+input:focus,
+select:focus,
+button:focus,
+textarea:focus {
+	outline: none;
+}
+
+a:hover,
+a:focus {
+	text-decoration: none;
+	outline: none;
+}
+
+ul,
+ol {
+	padding: 0;
+	margin: 0;
+}
+
+hr {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 2px solid #000;
+}
+
+/*---------------------
+	Header section
+-----------------------*/
+.header-section {
+	padding: 50px 40px;
+	background: #f2f7f8;
+}
+
+
+/*---------------------
+	Hero section
+-----------------------*/
+
+ul {
+	font-size: 33px;
+	color: #808181;
+}
+.hero-section {
+	background: #f2f7f8;
+}
+
+.hero-text {
+	margin-bottom: 80px;
+}
+
+.hero-text h2 {
+	font-size: 170px;
+	line-height: normal;
+	margin-bottom: 20px;
+}
+
+.hero-text p {
+  font-size: 45px;
+}
+
+.hero-image {
+	padding-top: 70px;
+}
+
+.hero-info h2 {
+	margin-bottom: 30px;
+}
+
+.hero-info ul {
+	list-style: square;
+}
+
+.hero-info ul li {
+	font-size: 33px;
+	color: #808181;
+	margin-bottom: 15px;
+}
+
+.hero-info ul li span {
+	color: #40424a;
+	display: inline-block;
+	min-width: 220px;
+	padding-left: 500px;
+}
+
+
+/*---------------------
+	Buttons
+-----------------------*/
+.site-btn {
+	display: inline-block;
+	text-transform: uppercase;
+	font-size: 12px;
+	min-width: 213px;
+	min-height: 20px;
+	text-align: center;
+	padding: 20px 10px 15px;
+	position: relative;
+	background-color: #fff;
+	margin-right: 10px;
+	border: 2px solid #40424a;
+	color: #40424a;
+	font-weight: 700;
+}
+
+.site-btn:hover {
+	color: #40424a;
+}
+
+/*---------------------
+	Social section
+-----------------------*/
+
+.social-links {
+	display: inline-block;
+	position: relative;
+	z-index: 5;
+}
+
+.social-links a {
+	color: #000;
+	font-size: 40px;
+	margin-right: 40px;
+	transition: 0.3s;
+}
+
+.social-links a:hover {
+	color: #808181;
+}
+
+/*---------------------
+	Dividers
+-----------------------*/
+.copy-divider {
+	background-color: #f2f7f8;
+	padding-top: 5px;
+}
+
+.copy-divider p {
+	color: #000;
+	font-size: 45px;
+}
+
+.copy-divider hr {
+	margin-top: 2rem;
+}
