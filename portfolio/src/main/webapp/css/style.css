@@ -78,7 +78,7 @@ hr {
 -----------------------*/
 
 ul {
-	font-size: 33px;
+	font-size: 30px;
 	color: #808181;
 }
 .hero-section {
@@ -123,6 +123,7 @@ ul {
 	min-width: 220px;
 	padding-left: 500px;
 }
+
 
 
 /*---------------------
@@ -184,4 +185,27 @@ ul {
 
 .copy-divider hr {
 	margin-top: 2rem;
+}
+
+/*---------------------
+	JS
+-----------------------*/
+
+.hideme {
+	opacity:0;
+}
+
+/*---------------------
+	Misc
+-----------------------*/
+img{
+	transition: transform .3s;
+}
+
+img:hover {
+	transform: scale(1.05);
+}
+
+.content p{
+	font-size: 25px;
 }
