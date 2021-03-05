@@ -1,6 +1,3 @@
-
-'use strict';
-
 $(function(){
   $('.monster').fadeIn('slow');
 });
@@ -16,3 +13,12 @@ $(document).ready(function() {
         });
     });
 });
+
+async function showServerTime() {
+  const responseFromServer = await fetch('/date');
+  const textFromResponse = await responseFromServer.text();
+
+  const dateContainer = document.getElementById('date-container');
+  dateContainer.innerText = textFromResponse;
+}
+setInterval(function(){showServerTime();}, 1000);
