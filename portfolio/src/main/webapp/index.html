@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/style.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
   </head>
-<body onload="showServerTime()">  
+<body onload="showServerTime() ,parseJson()">  
   <header class="monster header-section">
 		<div class="container-fluid">
 			<div class="row">
@@ -41,6 +41,7 @@
                                 <h2>Hi, I'm Andrew</h2>
                                 <p> Today is: <br></p>
                                 <p id="date-container"></p>
+                                <p id="rand-message"></p>
 							</div>
 						</div>
 						<div class="col-lg-6">

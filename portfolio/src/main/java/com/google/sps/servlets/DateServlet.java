@@ -15,10 +15,10 @@ public class DateServlet extends HttpServlet {
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
       LocalDateTime myDateObj = LocalDateTime.now();
-      DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+      DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("MM-dd-yyyy HH:mm:ss");
       String formattedDate = myDateObj.format(myFormatObj);
-      System.out.println("After formatting: " + formattedDate);
       response.setContentType("text/html;");
       response.getWriter().println(formattedDate);
+      
   }
 }
