@@ -8,17 +8,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter; 
+import com.google.gson.Gson;
 
-@WebServlet("/date")
-public class DateServlet extends HttpServlet {
+@WebServlet("/randmessage")
+public class RandomMessage extends HttpServlet {
 
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-      LocalDateTime myDateObj = LocalDateTime.now();
-      DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("MM-dd-yyyy HH:mm:ss");
-      String formattedDate = myDateObj.format(myFormatObj);
-      response.setContentType("text/html;");
-      response.getWriter().println(formattedDate);
-      
+      String[] messages = {"My Name is Andrew", "Javascript is painful", "I want to cry", "This is miserable"};
+      Gson gson = new Gson();
+      String json = gson.toJson(messages);
+
+      response.setContentType("application/json;");   
+      response.getWriter().println(json);
   }
 }

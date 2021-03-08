@@ -22,3 +22,21 @@ async function showServerTime() {
   dateContainer.innerText = textFromResponse;
 }
 setInterval(function(){showServerTime();}, 1000);
+
+
+//Parses JSON 
+async function GetMessage(){
+
+    const responseFromServer = await fetch('/randmessage');
+
+    const messageList = await responseFromServer.json();
+
+    const keys = Object.keys(messageList)
+
+    const randIndex = Math.floor(Math.random() * keys.length)
+    
+    const randKey = keys[randIndex]
+
+    const messageContainer = document.getElementById('rand-message');
+    messageContainer.innerHTML = messageList[randKey];
+}
