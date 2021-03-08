@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/style.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
   </head>
-<body onload="showServerTime() ,parseJson()">  
+<body onload="showServerTime() ,GetMessage()">
   <header class="monster header-section">
 		<div class="container-fluid">
 			<div class="row">
@@ -267,7 +267,38 @@
         </div>
       </div>
     </section>
-    <section class="monster header-section">
+      <div class="hideme copy-divider">
+        <div class="row">
+          <div class="offset-1 col-md-3">
+            <hr>
+          </div>
+          <div class="text-center col-md-4">
+              <p>Contact</p>
+          </div>
+          <div class="col-md-3">
+            <hr>
+          </div>
+        </div>
+      </div>
+      <section class="copy">
+        <div class="row">
+          <div class="col-xl-10 offset-xl-1">
+            <div class="row">
+              <div class="col-lg-8">
+                <div class="content text-center">
+                  <form action="/form-handler" method="POST">
+                       <p>Enter some text here:</p>
+                       <textarea name="text-input">hello world</textarea>
+                        <br/>
+                        <input type="submit" />
+                    </form>
+                </div>
+              </div>
+            </div>
+            </div>
+          </div>
+        </section>
+        <section class="monster header-section">
   		<div class="container-fluid">
   			<div class="row">
   				<div class="offset-1 col-md-3">
