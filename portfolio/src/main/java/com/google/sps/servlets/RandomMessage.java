@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter; 
+import com.google.gson.Gson;
 
 @WebServlet("/randmessage")
 public class RandomMessage extends HttpServlet {
@@ -23,19 +24,8 @@ public class RandomMessage extends HttpServlet {
   }
 
   private String convertToJson(String[] messages){
-      int iterator = 1;
-      String json = "{";
-      for (String i:messages){
-          json += "\"message" + iterator + "\":" + "\"" + i + "\"";
-          if (iterator == 4){
-              break;
-          }else{
-              json += ",";
-          }
-          iterator++;
-      }
-      json += "}";
+      Gson gson = new Gson();
+      String json = gson.toJson(messages);
       return json;
-      
   }
 }
