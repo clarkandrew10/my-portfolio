@@ -40,3 +40,20 @@ async function GetMessage(){
     const messageContainer = document.getElementById('rand-message');
     messageContainer.innerHTML = messageList[randKey];
 }
+// GMAP
+function createMap() {
+    const home = { lat: 40.83722745338909, lng:  -74.1191471082704 }
+    const offset = {lat: 40.84042660141585, lng: -74.03443215073405}
+    const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 13,
+    center: offset,
+    disableDefaultUI: true,
+    draggable: false,
+    animation: google.maps.Animation.DROP
+  });
+
+//   const marker = new google.maps.Marker({
+//     position: home,
+//     map: map,
+//   });
+}

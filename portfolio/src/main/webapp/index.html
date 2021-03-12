@@ -7,15 +7,18 @@
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,400i,600,600i,700" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap.min.css"/>
     <script src="https://kit.fontawesome.com/23b123588d.js" crossorigin="anonymous"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsu1LiwDIE9Fs7IyYDanZP91AQCWPakN8&callback=initMap" type="text/javascript"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsu1LiwDIE9Fs7IyYDanZP91AQCWPakN8"></script>
+
     <link rel="stylesheet" href="css/style.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
   </head>
-<body onload="showServerTime() ,GetMessage()">
+<body onload="showServerTime() ,GetMessage(), createMap()">
   <header class="monster header-section">
 		<div class="container-fluid">
 			<div class="row">
 				<div class="offset-1 col-md-3">
-          <hr>
+          <hr class="desk">
         </div>
         <div class="text-center col-md-4">
           <div class="social-links">
@@ -26,7 +29,7 @@
 					</div>
         </div>
         <div class="col-md-3">
-          <hr>
+          <hr class="desk">
         </div>
 			</div>
 		</div>
@@ -39,13 +42,13 @@
 						<div class="col-lg-6">
 							<div class="hero-text text-center">
                                 <h2>Hi, I'm Andrew</h2>
-                                <p> Today is: <br></p>
-                                <p id="date-container"></p>
+                                <p>Welcome!<br></p>
                                 <p id="rand-message"></p>
 							</div>
 						</div>
 						<div class="col-lg-6">
-							<figure class="pl-5 hero-image">
+							<figure class="pl-5 hero-image hero-text text-center">
+                                <p id="date-container" class="desk"></p>
 								<a href="https://www.linkedin.com/in/aclark19"><img src="img/self.jpg" alt="Self Image" width="450px" height="450px"></a>
 							</figure>
 						</div>
@@ -57,13 +60,13 @@
   <div class="hideme copy-divider">
     <div class="row">
       <div class="offset-1 col-md-3">
-        <hr>
+        <hr class="desk">
       </div>
       <div class="text-center col-md-4">
           <p>About Me</p>
       </div>
       <div class="col-md-3">
-        <hr>
+        <hr class="desk">
       </div>
     </div>
   </div>
@@ -88,15 +91,14 @@
           </div>
           <div class="row">
             <div class="col-lg-3">
-                <div class="thumbnail">
-                  <a href="img/food.jpg">
-                    <img src="img/food.jpg" class="img-rounded" alt="food" style="width:100%">
-                    <div class="caption text-center">
-                      <p>We try to surround ourselves with as much good food as possible 🤤</p>
-                    </div>
-                  </a>
-              </div>
+            <div class="thumbnail">
+              <a href="img/jrotc.jpg"><img src="img/jrotc.jpg" class="img-rounded" alt="snow" style="width:100%">
+                <div class="caption text-center">
+                  <p>C/Ensign</br> Public Affiars Officer </br> Air Rifle Team Commander</p>
+                </div>
+              </a>
             </div>
+          </div>
             <div class="col-lg-8">
               <div class="content text-center">
                 <p>Outside of work & interning I try to spend as much time with my boyfriend, Max. In August of 2020 we moved into our current apartment, so now we love to be home bodies 🏠 <br> One more thing! I have this weird obession with the boardgame Monopoly (<a href="img/monopoly.jpg">I own this 1995 version</a>) so when quarantine is over I'm ready to play someone 😤 </p>
@@ -109,13 +111,13 @@
     <div class="hideme copy-divider">
       <div class="row">
         <div class="offset-1 col-md-3">
-          <hr>
+          <hr class="desk">
         </div>
         <div class="text-center col-md-4">
             <p>What I've Done</p>
         </div>
         <div class="col-md-3">
-          <hr>
+          <hr class="desk">
         </div>
       </div>
     </div>
@@ -127,7 +129,7 @@
               <div class="content">
                 <div class="bullet-list">
                   <ul>
-                    <li><a href="img/jrotc.jpg">Was an officer in my school's NJROTC program</a></li>
+                    <li><a href="img/jrotc.jpg">Graduated as an officer in my high school's NJROTC program</a></li>
                     <li>Participated in <a href="img/cssi.jpg">Google's Computer Science Summer Institute NYC 2019</a> and designed <a href="https://savetheturtles.appspot.com/">this site</a></li>
                     <li><a href="https://devpost.com/software/cody-school-work-organizer">Won #1 Education Hack @ Rutger's Fall 2019 Hackathon</a></li>
                     <li>Currently interning @ The FORT Group </li>
@@ -152,13 +154,13 @@
     <div class="hideme copy-divider">
       <div class="row">
         <div class="offset-1 col-md-3">
-          <hr>
+          <hr class="desk">
         </div>
         <div class="text-center col-md-4">
             <p>Gallery</p>
         </div>
         <div class="col-md-3">
-          <hr>
+          <hr class="desk">
         </div>
       </div>
     </div>
@@ -270,39 +272,45 @@
       <div class="hideme copy-divider">
         <div class="row">
           <div class="offset-1 col-md-3">
-            <hr>
+            <hr class="desk">
           </div>
           <div class="text-center col-md-4">
-              <p>Contact</p>
+              <p>Lets Connect</p>
+              
           </div>
           <div class="col-md-3">
-            <hr>
+            <hr class="desk">
           </div>
         </div>
       </div>
-      <section class="copy">
+      <section>
         <div class="row">
-          <div class="col-xl-10 offset-xl-1">
-            <div class="row">
-              <div class="col-lg-8">
-                <div class="content text-center">
-                  <form action="/form-handler" method="POST">
-                       <p>Enter some text here:</p>
-                       <textarea name="text-input">hello world</textarea>
-                        <br/>
-                        <input type="submit" />
-                    </form>
-                </div>
-              </div>
+            
+            <div class="col-xl-6 offset-3 text-center">
+                <div class="contact-form">
+            <form action="/form-handler" method="POST" style="margin-bottom: -600px; padding-top: 40px;">
+                <input type="text" id="name" name="name" placeholder="Name">
+
+                <input type="text" id="email" name="email" placeholder="Email">
+                
+                <input type="text" id="message" name="message" style="height:100px;" placeholder="Message Here">
+            
+                <input type="submit" value="Submit">
+            </form>
+        </div>
             </div>
             </div>
+          <div class="col-xl-12">
+             <div id="map"></div>
+            </div>
+            
           </div>
         </section>
         <section class="monster header-section">
   		<div class="container-fluid">
   			<div class="row">
   				<div class="offset-1 col-md-3">
-            <hr>
+            <hr class="desk">
           </div>
           <div class="text-center col-md-4">
             <div class="social-links">
@@ -313,7 +321,7 @@
   					</div>
           </div>
           <div class="col-md-3">
-            <hr>
+            <hr class="desk">
           </div>
   			</div>
   		</div>
